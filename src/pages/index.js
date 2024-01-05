@@ -38,20 +38,27 @@ export default function Home({ data }) {
         </div>
       </section>
 
-      <section className="services_section relative">
+      <section className="services_section grid grid-cols-1 px-10 md:px-20 py-20 md:grid-cols-2 md:gap-x-20 gap-y-20">
         {services.map((service) => {
           const image = getImage(service.frontmatter.image);
           const title = service.frontmatter.title;
 
           return (
-            <Link className="service-link" to="/servicii" key={service.id}>
+            <Link
+              className="service_preview_card mx-auto relative flex flex-col max-w-lg items-center justify-center"
+              to="/servicii"
+              key={service.id}
+            >
               <GatsbyImage
-                className="service_image"
+                className="service_image w-full h-full"
                 image={image}
                 alt={title}
+                placeholder="blurred"
               />
 
-              <h3 className="service-title">{title}</h3>
+              <h3 className="service-title text-white text-lg bg-black bg-opacity-50 p-2 absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                {title}
+              </h3>
             </Link>
           );
         })}
@@ -62,7 +69,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { frontmatter: { title: { ne: "Despre" } } }) {
       nodes {
         id
         frontmatter {
