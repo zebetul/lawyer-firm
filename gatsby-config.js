@@ -30,8 +30,11 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: "Cabinet de Avocatura Simona Oros",
-    description: "Cabinet de Avocatura",
+    title: "Avocat Simona Oros",
+    subtitle:
+      "Sunt aici pentru a vă ajuta să găsim cea mai bună soluție legală.",
+    description: "Cabinet de Avocatură Simona Oros din Satu Mare",
+    motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
     contact: {
       phone: "0722 123 456",
       email: "email@gmail.com",
