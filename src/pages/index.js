@@ -34,7 +34,7 @@ export default function Home({ data }) {
             </h2>
 
             <Link
-              className="hero_button px-10 py-3 mr-auto rounded-md bg-white text-black text-lg hover:bg-gray-200"
+              className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-black text-lg hover:bg-accentDark"
               to="/contact"
             >
               CONTACT
@@ -89,6 +89,7 @@ export const query = graphql`
         }
       }
     }
+
     site {
       siteMetadata {
         title

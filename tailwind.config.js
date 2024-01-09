@@ -4,6 +4,13 @@ export const content = [
   "./src/components/**/*.{js,jsx,ts,tsx}",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    colors: {
+      primary: "#F2F2F2", // Light gray
+      secondary: "#171D28", // Dark gray
+      accent: "#F2D8A7", // Light yellow
+      accentDark: "#BFAA84", // Dark yellow
+    },
+  },
 };
 export const plugins = [];

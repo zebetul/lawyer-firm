@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -13,18 +14,38 @@ const Footer = () => {
           }
         }
       }
+
+      footerServices: allMarkdownRemark(
+        filter: { frontmatter: { title: { ne: "Despre" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+          }
+          id
+        }
+      }
     }
   `);
 
   const metadata = data.site.siteMetadata;
+  const services = data.footerServices.nodes;
 
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto mt-20 mb-10 flex flex-col md:flex-row justify-around">
+    <footer className="bg-secondary text-white">
+      <div className="logo_container flex justify-center items-center py-10">
+        <Link to="/">
+          <StaticImage
+            src="../images/logos/logo_500x182.png"
+            className="w-80"
+            alt="logo"
+          />
+        </Link>
+      </div>
+
+      <div className="footer_links max-w-5xl mx-auto mb-20 flex flex-col gap-10 md:flex-row justify-center md:justify-around items-center md:items-start text-center md:text-start">
         <div className="flex flex-col gap-2">
-          <Link to="/" className="font-bold text-xl">
-            {metadata.title.toUpperCase()}
-          </Link>
+          <h4 className="text-xl font-bold text-accentDark">CONTACT</h4>
 
           <p>{metadata.contact.phone}</p>
 
@@ -32,15 +53,17 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Link to="/despre">DESPRE</Link>
+          <h4 className="text-xl font-bold text-accentDark">
+            DOMENII DE PRACTICA
+          </h4>
 
-          <Link to="/servicii">SERVICII</Link>
-
-          <Link to="/contact">CONTACT</Link>
+          {services.map((service) => (
+            <Link to="/domenii-de-practica">{service.frontmatter.title}</Link>
+          ))}
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mb-5 text-center text-sm">
+      <div className="coyright_container max-w-7xl mx-auto mb-5 text-center text-sm">
         <p>{metadata.title.toUpperCase()} &copy; 2024</p>
       </div>
     </footer>

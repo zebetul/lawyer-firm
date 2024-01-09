@@ -1,10 +1,31 @@
+import React from "react";
+import { useState, useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
 import { PiPhoneFill } from "react-icons/pi";
 import { MdEmail } from "react-icons/md";
+import { debounce } from "lodash";
 
 const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 200) {
+        console.log("scrolling");
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }, 100); // Adjust the debounce delay as per your requirement
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -22,7 +43,11 @@ const NavBar = () => {
   const siteMetadata = data.site.siteMetadata;
 
   return (
-    <nav className="sticky top-0 z-10 text-white bg-black">
+    <nav
+      className={`sticky top-0 z-10 py-2 text-primary ${
+        isScrolled ? "bg-secondary " : ""
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex justify-between px-5">
         <Link className="nav_logo" to="/">
           <StaticImage
@@ -39,7 +64,7 @@ const NavBar = () => {
                 href={`tel:${siteMetadata.contact.phone}`}
                 className="nav_phone flex gap-2"
               >
-                <PiPhoneFill size={20} />
+                <PiPhoneFill className="text-accentDark" size={20} />
                 <p>{siteMetadata.contact.phone}</p>
               </a>
             </li>
@@ -48,7 +73,7 @@ const NavBar = () => {
                 href={`mailto:${siteMetadata.contact.email}`}
                 className="nav_email flex gap-2"
               >
-                <MdEmail size={20} />
+                <MdEmail className="text-accentDark" size={20} />
                 <p>{siteMetadata.contact.email}</p>
               </a>
             </li>
@@ -56,13 +81,19 @@ const NavBar = () => {
 
           <ul className="nav_links flex justify-end gap-10 font-bold text-sm">
             <li>
-              <Link to="/despre">DESPRE</Link>
+              <Link className="hover:text-accentDark" to="/despre">
+                DESPRE
+              </Link>
             </li>
             <li>
-              <Link to="/domenii-de-practica">DOMENII DE PRACTICA</Link>
+              <Link className="hover:text-accentDark" to="/domenii-de-practica">
+                DOMENII DE PRACTICA
+              </Link>
             </li>
             <li>
-              <Link to="/contact">CONTACT</Link>
+              <Link className="hover:text-accentDark" to="/contact">
+                CONTACT
+              </Link>
             </li>
           </ul>
         </div>
