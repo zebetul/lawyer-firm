@@ -19,8 +19,8 @@ const Footer = () => {
   const metadata = data.site.siteMetadata;
 
   return (
-    <footer className="py-5 bg-black text-white">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between">
+    <footer className="bg-black text-white">
+      <div className="max-w-7xl mx-auto mt-20 mb-10 flex flex-col md:flex-row justify-around">
         <div className="flex flex-col gap-2">
           <Link to="/" className="font-bold text-xl">
             {metadata.title.toUpperCase()}
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto text-center text-sm">
+      <div className="max-w-7xl mx-auto mb-5 text-center text-sm">
         <p>{metadata.title.toUpperCase()} &copy; 2024</p>
       </div>
     </footer>

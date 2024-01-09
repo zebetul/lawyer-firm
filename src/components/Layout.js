@@ -4,10 +4,10 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => (
-  <div className="layout mx-auto" style={{ maxWidth: 2000 }}>
+  <div className="layout flex flex-col">
     <NavBar />
 
-    <div className="content">{children}</div>
+    <div className="content mx-auto max-w-7xl">{children}</div>
 
     <Footer />
   </div>

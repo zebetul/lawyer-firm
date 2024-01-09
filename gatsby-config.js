@@ -36,8 +36,9 @@ module.exports = {
     description: "Cabinet de Avocatură Simona Oros din Satu Mare",
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
     contact: {
-      phone: "0722 123 456",
-      email: "email@gmail.com",
+      phone: "0740.886.617",
+      email: "smna16@yahoo.com",
+      address: "Str. Horea, nr. 11, Satu Mare",
     },
   },
 };
