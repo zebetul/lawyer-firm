@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { PiPhoneFill } from "react-icons/pi";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdOutlineClose, MdOutlineMenu } from "react-icons/md";
 import { debounce } from "lodash";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  // Make a collapsable, hamburger menu nav using react-icons
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -42,6 +44,10 @@ const NavBar = () => {
 
   const siteMetadata = data.site.siteMetadata;
 
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav
       className={`sticky top-0 z-10 py-2 text-primary ${
@@ -52,44 +58,63 @@ const NavBar = () => {
         <Link className="nav_logo" to="/">
           <StaticImage
             src="../images/logos/logo_500x182.png"
-            className="w-52"
+            className="w-40 md:w-52"
             alt="logo"
           />
         </Link>
 
         <div className="nav_links_container flex flex-col justify-center mr-0">
-          <ul className="nav_contact mb-3 flex flex-row justify-end gap-10 text-sm">
+          <ul className="nav_contact mt-2 md:mt-0 mb-3 me-1 md:me-0 flex flex-row justify-end gap-10 text-sm">
             <li>
               <a
                 href={`tel:${siteMetadata.contact.phone}`}
                 className="nav_phone flex gap-2"
               >
                 <PiPhoneFill className="text-accentDark" size={20} />
-                <p>{siteMetadata.contact.phone}</p>
+
+                <p className="hidden md:flex">{siteMetadata.contact.phone}</p>
               </a>
             </li>
+
             <li>
               <a
                 href={`mailto:${siteMetadata.contact.email}`}
                 className="nav_email flex gap-2"
               >
                 <MdEmail className="text-accentDark" size={20} />
-                <p>{siteMetadata.contact.email}</p>
+
+                <p className="hidden md:flex">{siteMetadata.contact.email}</p>
               </a>
             </li>
           </ul>
 
-          <ul className="nav_links flex justify-end gap-10 font-bold text-sm">
+          {isMenuOpen ? (
+            <MdOutlineClose
+              size={30}
+              className="md:hidden text-accentDark cursor-pointer my-auto ms-auto"
+              onClick={handleMenuToggle}
+            />
+          ) : (
+            <MdOutlineMenu
+              size={30}
+              className="md:hidden text-accentDark cursor-pointer my-auto ms-auto"
+              onClick={handleMenuToggle}
+            />
+          )}
+
+          <ul className="nav_links hidden md:flex justify-end gap-10 font-bold text-sm">
             <li>
               <Link className="hover:text-accentDark" to="/despre">
                 DESPRE
               </Link>
             </li>
+
             <li>
               <Link className="hover:text-accentDark" to="/domenii-de-practica">
                 DOMENII DE PRACTICA
               </Link>
             </li>
+
             <li>
               <Link className="hover:text-accentDark" to="/contact">
                 CONTACT
