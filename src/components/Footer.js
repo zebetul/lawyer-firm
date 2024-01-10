@@ -43,23 +43,25 @@ const Footer = () => {
         </Link>
       </div>
 
-      <div className="footer_links max-w-5xl mx-auto mb-20 flex flex-col gap-10 md:flex-row justify-center md:justify-around items-center md:items-start text-center md:text-start">
+      <div className="footer_links max-w-3xl mx-auto mb-20 flex flex-col gap-10 md:flex-row justify-center md:justify-around items-center md:items-start text-center md:text-start">
         <div className="flex flex-col gap-2">
-          <h4 className="text-xl font-bold text-accentDark">CONTACT</h4>
-
-          <p>{metadata.contact.phone}</p>
-
-          <p>{metadata.contact.email}</p>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h4 className="text-xl font-bold text-accentDark">
+          <h4 className="text-xl font-bold text-accentDark font-serif">
             DOMENII DE PRACTICA
           </h4>
 
           {services.map((service) => (
             <Link to="/domenii-de-practica">{service.frontmatter.title}</Link>
           ))}
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <h4 className="text-xl font-bold text-accentDark font-serif">
+            CONTACT
+          </h4>
+
+          <p>{metadata.contact.phone}</p>
+
+          <p>{metadata.contact.email}</p>
         </div>
       </div>
 

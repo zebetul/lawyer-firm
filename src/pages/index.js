@@ -27,7 +27,9 @@ export default function Home({ data }) {
               {siteMetadata.subtitle}
             </h5>
 
-            <h1 className="hero_title mb-5 text-6xl">{siteMetadata.title}</h1>
+            <h1 className="hero_title mb-5 font-serif text-6xl">
+              {siteMetadata.title}
+            </h1>
 
             <h2 className="hero_subtitle mb-10 text-2xl">
               {siteMetadata.motto}
@@ -60,7 +62,7 @@ export default function Home({ data }) {
                   placeholder="blurred"
                 />
 
-                <h3 className="service-title text-white text-lg bg-black bg-opacity-50 p-2 absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                <h3 className="service-title font-serif text-white text-lg bg-black bg-opacity-50 p-2 absolute top-0 left-0 w-full h-full flex items-center justify-center">
                   {title}
                 </h3>
               </Link>

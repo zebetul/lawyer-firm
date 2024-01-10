@@ -50,7 +50,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-10 py-2 text-primary ${
+      className={`nav_background sticky top-0 z-10 py-2 text-primary ${
         isScrolled || isMenuOpen ? "bg-secondary " : ""
       }`}
     >
@@ -96,7 +96,7 @@ const NavBar = () => {
                 onClick={handleMenuToggle}
               />
 
-              <ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 pt-10 pb-5 ps-5 font-bold text-sm">
+              <ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 py-10 ps-5 font-bold font-serif text-sm">
                 <Link to="/despre">
                   <li>DESPRE</li>
                 </Link>
@@ -118,7 +118,7 @@ const NavBar = () => {
             />
           )}
 
-          <ul className="nav_links hidden md:flex justify-end gap-10 font-bold text-sm">
+          <ul className="nav_links hidden md:flex justify-end gap-10 font-serif font-bold text-sm">
             <Link className="hover:text-accentDark" to="/despre">
               <li>DESPRE</li>
             </Link>

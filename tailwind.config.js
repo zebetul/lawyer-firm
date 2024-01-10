@@ -11,6 +11,11 @@ export const theme = {
       accent: "#F2D8A7", // Light yellow
       accentDark: "#BFAA84", // Dark yellow
     },
+
+    fontFamily: {
+      serif: ["Libre Baskerville", "serif"],
+      sans: ["Roboto", "sans-serif"],
+    },
   },
 };
 export const plugins = [];

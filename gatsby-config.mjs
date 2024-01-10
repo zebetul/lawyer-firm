@@ -7,7 +7,14 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+// import { createRequire } from "module";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// const require = createRequire(import.meta.url);
+
+const config = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
@@ -28,13 +35,22 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Libre Baskerville\:400,700`, `Roboto\:400,500,700,900`],
+        display: "swap",
+      },
+    },
   ],
+
   siteMetadata: {
     title: "Avocat Simona Oros",
     subtitle:
       "Sunt aici pentru a vă ajuta să găsim cea mai bună soluție legală.",
     description: "Cabinet de Avocatură Simona Oros din Satu Mare",
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
+    siteUrl: "https://avocatsimonaoros.ro",
     contact: {
       phone: "0740.886.617",
       email: "smna16@yahoo.com",
@@ -42,3 +58,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
