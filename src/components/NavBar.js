@@ -51,7 +51,7 @@ const NavBar = () => {
   return (
     <nav
       className={`sticky top-0 z-10 py-2 text-primary ${
-        isScrolled ? "bg-secondary " : ""
+        isScrolled || isMenuOpen ? "bg-secondary " : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between px-5">
@@ -89,11 +89,27 @@ const NavBar = () => {
           </ul>
 
           {isMenuOpen ? (
-            <MdOutlineClose
-              size={30}
-              className="md:hidden text-accentDark cursor-pointer my-auto ms-auto"
-              onClick={handleMenuToggle}
-            />
+            <>
+              <MdOutlineClose
+                size={30}
+                className="md:hidden text-accentDark cursor-pointer my-auto ms-auto"
+                onClick={handleMenuToggle}
+              />
+
+              <ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 pt-10 pb-5 ps-5 font-bold text-sm">
+                <Link to="/despre">
+                  <li>DESPRE</li>
+                </Link>
+
+                <Link to="/domenii-de-practica">
+                  <li>DOMENII DE PRACTICA</li>
+                </Link>
+
+                <Link to="/contact">
+                  <li>CONTACT</li>
+                </Link>
+              </ul>
+            </>
           ) : (
             <MdOutlineMenu
               size={30}
@@ -103,23 +119,17 @@ const NavBar = () => {
           )}
 
           <ul className="nav_links hidden md:flex justify-end gap-10 font-bold text-sm">
-            <li>
-              <Link className="hover:text-accentDark" to="/despre">
-                DESPRE
-              </Link>
-            </li>
+            <Link className="hover:text-accentDark" to="/despre">
+              <li>DESPRE</li>
+            </Link>
 
-            <li>
-              <Link className="hover:text-accentDark" to="/domenii-de-practica">
-                DOMENII DE PRACTICA
-              </Link>
-            </li>
+            <Link className="hover:text-accentDark" to="/domenii-de-practica">
+              <li>DOMENII DE PRACTICA</li>
+            </Link>
 
-            <li>
-              <Link className="hover:text-accentDark" to="/contact">
-                CONTACT
-              </Link>
-            </li>
+            <Link className="hover:text-accentDark" to="/contact">
+              <li>CONTACT</li>
+            </Link>
           </ul>
         </div>
       </div>
