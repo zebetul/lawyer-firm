@@ -8,18 +8,16 @@ import { debounce } from "lodash";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  // Make a collapsable, hamburger menu nav using react-icons
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = debounce(() => {
       if (window.scrollY > 200) {
-        console.log("scrolling");
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
-    }, 100); // Adjust the debounce delay as per your requirement
+    }, 100);
 
     window.addEventListener("scroll", handleScroll);
 
@@ -51,7 +49,7 @@ const NavBar = () => {
   return (
     <nav
       className={`nav_background sticky top-0 z-10 py-2 text-primary ${
-        isScrolled || isMenuOpen ? "bg-secondary " : ""
+        isScrolled || isMenuOpen ? "bg-secondary" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between px-5">

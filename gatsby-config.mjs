@@ -53,7 +53,8 @@ const config = {
     siteUrl: "https://avocatsimonaoros.ro",
     contact: {
       phone: "0740.886.617",
-      email: "smna16@yahoo.com",
+      email: "avocat.simonaoros@gmail.com",
+      linkedin: "https://www.linkedin.com/in/simona-oros-nistor-38941088/",
       address: "Str. Horea, nr. 11, Satu Mare",
     },
   },

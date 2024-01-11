@@ -36,7 +36,7 @@ export default function Home({ data }) {
             </h2>
 
             <Link
-              className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-black text-lg hover:bg-accentDark"
+              className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
               to="/contact"
             >
               CONTACT
@@ -44,30 +44,49 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className="services_section grid grid-cols-1 md:grid-cols-2 px-10 py-20 sm:px-32 md:px-20 lg:px-32 lg:py-32 gap-20 lg:gap-32">
-          {services.map((service) => {
-            const image = getImage(service.frontmatter.image);
-            const title = service.frontmatter.title;
+        <section className="services_section text-secondary">
+          <h2 className="services_title text-center text-xl md:text-2xl font-serif">
+            DOMENII DE PRACTICĂ
+          </h2>
 
-            return (
-              <Link
-                className="service_preview_card mx-auto relative flex flex-col items-center justify-center"
-                to="/servicii"
-                key={service.id}
-              >
-                <GatsbyImage
-                  className="service_image w-full h-full"
-                  image={image}
-                  alt={title}
-                  placeholder="blurred"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 px-10 py-20 sm:px-32 md:px-20 lg:px-32 lg:py-32 gap-20 lg:gap-32">
+            {services.map((service) => {
+              const image = getImage(service.frontmatter.image);
+              const title = service.frontmatter.title;
+              const icon = getImage(service.frontmatter.icon);
 
-                <h3 className="service-title font-serif text-white text-lg bg-black bg-opacity-50 p-2 absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                  {title}
-                </h3>
-              </Link>
-            );
-          })}
+              return (
+                <Link
+                  className="service_preview_card"
+                  to="/domenii-de-practica"
+                  key={service.id}
+                >
+                  <div className="image_container relative w-full">
+                    <GatsbyImage
+                      className="service_image w-full"
+                      image={image}
+                      style={{ filter: "brightness(40%)" }}
+                      alt={title}
+                      placeholder="blurred"
+                    />
+
+                    <div className="service-title absolute top-0 left-0 w-full h-full p-2 flex items-center justify-center">
+                      <GatsbyImage
+                        className="service_icon w-32"
+                        image={icon}
+                        alt={title}
+                        placeholder="blurred"
+                      />
+                    </div>
+                  </div>
+
+                  <h3 className="service-title mt-5 text-center text-2xl">
+                    {title}
+                  </h3>
+                </Link>
+              );
+            })}
+          </div>
         </section>
       </Layout>
     </>
@@ -88,10 +107,14 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+          icon {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }
-
     site {
       siteMetadata {
         title

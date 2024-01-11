@@ -1,6 +1,7 @@
 ---
 title: Drept comercial
 image: ../images/drept-comercial.png
+icon: ../images/icons/drept-comercial.png
 ---
 
 # DREPTUL COMERCIAL

@@ -1,6 +1,7 @@
 ---
 title: Dreptul familiei
 image: ../images/dreptul-familiei.png
+icon: ../images/icons/dreptul-familiei.png
 ---
 
 # DREPTUL FAMILIEI
