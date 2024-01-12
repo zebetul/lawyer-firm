@@ -8,6 +8,7 @@ export const theme = {
     colors: {
       primary: "#F2F2F2", // Light gray
       secondary: "#171D28", // Dark gray
+      // secondary: "#E52D1A", // Red
       accent: "#F2D8A7", // Light yellow
       accentDark: "#BFAA84", // Dark yellow
     },

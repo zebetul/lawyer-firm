@@ -9,6 +9,7 @@ import { debounce } from "lodash";
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNotHomePage, setIsNotHomePage] = useState(false);
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -20,6 +21,12 @@ const NavBar = () => {
     }, 100);
 
     window.addEventListener("scroll", handleScroll);
+
+    if (window.location.pathname !== "/") {
+      setIsNotHomePage(true);
+    } else {
+      setIsNotHomePage(false);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -49,7 +56,7 @@ const NavBar = () => {
   return (
     <nav
       className={`nav_background sticky top-0 z-10 py-2 text-primary ${
-        isScrolled || isMenuOpen ? "bg-secondary" : ""
+        isScrolled || isMenuOpen || isNotHomePage ? "bg-secondary" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between px-5">

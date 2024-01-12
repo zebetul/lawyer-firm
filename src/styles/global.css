@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Markdown styles */
+/* Lists */
+.markdown ul {
+  @apply ml-5;
+}
+.markdown li {
+  @apply mb-3;
+}
+.markdown ul {
+  @apply list-disc;
+}
+
 * {
   margin: 0;
   padding: 0;

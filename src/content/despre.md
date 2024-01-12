@@ -1,10 +1,6 @@
 ---
 title: Despre
-image: ../images/lawyer/profile.png
+image: ../images/despre.jpg
 ---
 
-# CABINET AVOCATURA
-
-## Despre
-
-Cabinetul de avocatură este o societate civilă profesională de avocați înființată în anul 2016, cu sediul în municipiul București, sector 1, str. Ion Câmpineanu nr. 20, etaj 1, ap. 2, cod poștal 010038, înregistrată la Baroul București.
+Avocat Simona Oros este membru al Baroului de Avocatură din Satu Mare, cu o experiență de peste 10 ani în domeniul juridic, oferind servicii de consultanță juridică și reprezentare în fața instanțelor de judecată din România.

@@ -63,7 +63,7 @@ export default function Home({ data }) {
                 >
                   <div className="image_container relative w-full">
                     <GatsbyImage
-                      className="service_image w-full"
+                      className="service_image w-full rounded-lg"
                       image={image}
                       style={{ filter: "brightness(40%)" }}
                       alt={title}
