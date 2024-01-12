@@ -70,12 +70,13 @@ export default function Home({ data }) {
                       placeholder="blurred"
                     />
 
-                    <div className="service-title absolute top-0 left-0 w-full h-full p-2 flex items-center justify-center">
+                    <div className="service-icon-container absolute top-0 left-0 w-full h-full p-2 flex items-center justify-center">
                       <GatsbyImage
                         className="service_icon w-32"
                         image={icon}
                         alt={title}
                         placeholder="blurred"
+                        style={{ filter: "brightness(90%)" }}
                       />
                     </div>
                   </div>
