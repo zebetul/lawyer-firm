@@ -12,21 +12,18 @@ export default function About({ data }) {
   return (
     <Layout>
       <div className="about-page">
-        <h2 className="services-title mb-20 md:mb-32 mt-20 text-center text-xl md:text-4xl text-secondary font-serif">
+        <h1 className="services-title mb-20 md:mb-32 mt-20 text-center text-xl md:text-4xl text-secondary font-serif">
           DESPRE
-        </h2>
+        </h1>
 
         <div className="about-container mb-32 flex flex-col-reverse md:flex-row gap-20 text-secondary">
           <div className="content-container relative mx-5 flex-1 flex flex-col justify-center">
-            <div className="icon-container absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <div className="icon-container absolute md:-top-20 left-0 w-full h-full flex items-center justify-center -z-10">
               <GatsbyImage
                 className="w-full"
                 image={icon}
                 alt={frontmatter.title}
-                style={
-                  // I want to transform the colors of the image to white
-                  { filter: "invert(1)", opacity: "0.05" }
-                }
+                style={{ filter: "brightness(95%)" }}
               />
             </div>
 

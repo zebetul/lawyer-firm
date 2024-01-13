@@ -56,7 +56,9 @@ const NavBar = () => {
   return (
     <nav
       className={`nav_background sticky top-0 z-10 py-2 text-primary ${
-        isScrolled || isMenuOpen || isNotHomePage ? "bg-secondary" : ""
+        isScrolled || isMenuOpen || isNotHomePage
+          ? "bg-secondary transition-all duration-300"
+          : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between px-5">

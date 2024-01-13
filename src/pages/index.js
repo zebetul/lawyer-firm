@@ -23,17 +23,15 @@ export default function Home({ data }) {
       <Layout>
         <section className="hero_section h-screen w-full">
           <div className="hero_title-container absolute top-1/3 ml-5 2xl:ml-28 flex flex-col text-3xl text-white">
-            <h5 className="hero_subtitle mb-5 text-sm">
+            <h2 className="hero_subtitle mb-5 text-sm">
               {siteMetadata.subtitle}
-            </h5>
+            </h2>
 
             <h1 className="hero_title mb-5 font-serif text-6xl">
               {siteMetadata.title}
             </h1>
 
-            <h2 className="hero_subtitle mb-10 text-2xl">
-              {siteMetadata.motto}
-            </h2>
+            <p className="hero_subtitle mb-10 text-2xl">{siteMetadata.motto}</p>
 
             <Link
               className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
@@ -45,9 +43,9 @@ export default function Home({ data }) {
         </section>
 
         <section className="services_section text-secondary">
-          <h2 className="services_title text-center text-xl md:text-2xl font-serif">
+          <h1 className="services_title text-center text-xl md:text-2xl font-serif">
             DOMENII DE PRACTICĂ
-          </h2>
+          </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 px-10 py-20 sm:px-32 md:px-20 lg:px-32 lg:py-32 gap-20 lg:gap-32">
             {services.map((service) => {
@@ -58,7 +56,7 @@ export default function Home({ data }) {
               return (
                 <Link
                   className="service_preview_card"
-                  to="/domenii-de-practica"
+                  to={`/domenii-de-practica#${title}`}
                   key={service.id}
                 >
                   <div className="image_container relative w-full">

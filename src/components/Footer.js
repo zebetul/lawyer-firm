@@ -57,7 +57,7 @@ const Footer = () => {
           <ul className="services_list flex flex-col gap-3">
             {services.map((service) => (
               <li key={service.id}>
-                <Link to="/domenii-de-practica">
+                <Link to={`/domenii-de-practica#${service.frontmatter.title}`}>
                   {service.frontmatter.title}
                 </Link>
               </li>
