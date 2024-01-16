@@ -16,6 +16,7 @@ const Footer = () => {
             email
             address
             linkedin
+            googleMapsUrl
           }
         }
       }
@@ -35,6 +36,7 @@ const Footer = () => {
 
   const metadata = data.site.siteMetadata;
   const services = data.footerServices.nodes;
+  const { phone, email, address, linkedin, googleMapsUrl } = metadata.contact;
 
   return (
     <footer className="bg-secondary text-white">
@@ -75,12 +77,12 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`tel:${metadata.contact.phone}`}
+                href={`tel:${phone}`}
                 className="contact_phone flex items-center gap-2"
               >
                 <PiPhoneFill className="text-accentDark" size={20} />
 
-                {metadata.contact.phone}
+                {phone}
               </a>
             </li>
 
@@ -88,12 +90,12 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`mailto:${metadata.contact.email}`}
+                href={`mailto:${email}`}
                 className="contact_email flex items-center gap-2"
               >
                 <MdEmail className="text-accentDark" size={20} />
 
-                {metadata.contact.email}
+                {email}
               </a>
             </li>
 
@@ -101,7 +103,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={metadata.contact.linkedin}
+                href={linkedin}
                 className="contact_linkedin flex items-center gap-2"
               >
                 <FaLinkedin className="text-accentDark" size={20} />
@@ -113,12 +115,12 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://maps.app.goo.gl/yruHt4NrMY8qmqQm6"
+                href={googleMapsUrl}
                 className="contact_linkedin flex items-center gap-2"
               >
                 <MdLocationOn className="text-accentDark" size={20} />
 
-                {metadata.contact.address}
+                {address}
               </a>
             </li>
           </ul>

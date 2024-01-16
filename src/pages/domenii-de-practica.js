@@ -9,9 +9,11 @@ export default function Services({ data }) {
 
   return (
     <Layout>
-      <h1 className="services-title md:mb-12 mt-20 text-center text-xl md:text-4xl text-secondary font-serif">
-        DOMENII DE PRACTICĂ
-      </h1>
+      <div className="title-container w-full flex flex-col">
+        <h1 className="services-title mx-auto md:mb-12 mt-20 border-b-2 pb-2 border-accent text-center text-xl md:text-4xl text-secondary font-serif">
+          DOMENII DE PRACTICĂ
+        </h1>
+      </div>
 
       <div className="services-container mb-32 flex flex-col gap-20 text-secondary">
         {services.map((service, i) => {

@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
   <div className="layout flex flex-col font-sans">
     <NavBar />
 
-    <div className="content mx-auto max-w-7xl">{children}</div>
+    <div className="content-container mx-auto w-full max-w-7xl">{children}</div>
 
     <Footer />
   </div>

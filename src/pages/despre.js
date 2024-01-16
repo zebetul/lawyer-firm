@@ -11,8 +11,8 @@ export default function About({ data }) {
 
   return (
     <Layout>
-      <div className="about-page">
-        <h1 className="services-title mb-20 md:mb-32 mt-20 text-center text-xl md:text-4xl text-secondary font-serif">
+      <div className="about-page flex flex-col">
+        <h1 className="services-title mx-auto mb-20 md:mb-32 mt-20 border-b-2 pb-2 border-accent text-center text-xl md:text-4xl text-secondary font-serif">
           DESPRE
         </h1>
 
