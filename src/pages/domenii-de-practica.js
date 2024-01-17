@@ -76,6 +76,7 @@ export const query = graphql`
   query ServicesPageQuery {
     services: allMarkdownRemark(
       filter: { frontmatter: { title: { ne: "Despre" } } }
+      sort: { frontmatter: { title: ASC } }
     ) {
       nodes {
         id

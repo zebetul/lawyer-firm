@@ -17,7 +17,7 @@ export default function Contact({ data }) {
         </h1>
 
         <div className="contacts-container mb-20 flex flex-col md:flex-row gap-10 text-secondary">
-          <div className="contact-form-container mx-auto flex-1 w-72 flex flex-col md:flex-row items-center md:items-start gap-3 p-4 bg-gray-100 rounded-lg">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               className="contact_phone"
               target="_blank"
@@ -34,7 +34,7 @@ export default function Contact({ data }) {
             </div>
           </div>
 
-          <div className="contact-form-container mx-auto flex-1 w-72 flex flex-col md:flex-row items-center md:items-start gap-3 p-4 bg-gray-100 rounded-lg">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function Contact({ data }) {
             </div>
           </div>
 
-          <div className="contact-form-container mx-auto flex-1 w-72 flex flex-col md:flex-row items-center md:items-start gap-3 p-4 bg-gray-100 rounded-lg">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               target="_blank"
               rel="noopener noreferrer"

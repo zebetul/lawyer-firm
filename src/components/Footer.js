@@ -23,6 +23,7 @@ const Footer = () => {
 
       footerServices: allMarkdownRemark(
         filter: { frontmatter: { title: { ne: "Despre" } } }
+        sort: { frontmatter: { title: ASC } }
       ) {
         nodes {
           frontmatter {
@@ -51,7 +52,7 @@ const Footer = () => {
       </div>
 
       <div className="footer_links max-w-3xl mx-auto mb-20 flex gap-10 flex-col md:flex-row items-center md:justify-around">
-        <div className="column_services w-72 flex flex-col gap-3">
+        <div className="column_services w-80 flex flex-col gap-3">
           <h4 className="font-bold text-accentDark font-serif">
             DOMENII DE PRACTICA
           </h4>
@@ -67,7 +68,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="column_contact w-72 flex flex-col gap-3">
+        <div className="column_contact w-80 flex flex-col gap-3">
           <h4 className="text-l font-bold text-accentDark font-serif">
             CONTACT
           </h4>
