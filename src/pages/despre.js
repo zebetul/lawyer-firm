@@ -11,13 +11,13 @@ export default function About({ data }) {
 
   return (
     <Layout>
-      <div className="about-page flex flex-col">
+      <div className="about-page flex flex-col px-5">
         <h1 className="services-title mx-auto mb-20 md:mb-32 mt-20 border-b-2 pb-2 border-accent text-center text-xl md:text-4xl text-secondary font-serif">
           DESPRE
         </h1>
 
         <div className="about-container mb-32 flex flex-col-reverse md:flex-row gap-20 text-secondary">
-          <div className="content-container relative mx-5 flex-1 flex flex-col justify-center">
+          <div className="content-container relative max-w-lg mx-auto flex-1 flex flex-col justify-center">
             <div className="icon-container absolute md:-top-20 left-0 w-full h-full flex items-center justify-center -z-10">
               <GatsbyImage
                 className="w-full"
@@ -38,7 +38,7 @@ export default function About({ data }) {
           </div>
 
           <GatsbyImage
-            className="flex-1 rounded-lg mx-5"
+            className="flex-1 rounded-lg max-w-lg mx-auto"
             image={image}
             alt={frontmatter.title}
           />

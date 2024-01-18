@@ -28,7 +28,7 @@ export default function Home({ data }) {
 
       <Layout>
         <section className="hero_section h-screen w-full">
-          <div className="hero_title-container absolute top-1/3 ml-5 2xl:ml-28 flex flex-col text-3xl text-white">
+          <div className="hero_title-container relative w-full h-full md:h-3/4 pl-5 2xl:pl-28 flex flex-col justify-center text-3xl text-white">
             <h2 className="hero_subtitle mb-5 text-sm">
               {siteMetadata.subtitle}
             </h2>
@@ -48,9 +48,9 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className="about_section w-full">
+        <section className="about_section w-full px-5">
           <div className="about-container mb-32 flex flex-col-reverse md:flex-row gap-20 text-secondary">
-            <div className="content-container relative mx-5 py-20 flex-1 flex flex-col justify-center">
+            <div className="content-container relative py-20 flex-1 max-w-lg mx-auto flex flex-col justify-center">
               <div className="icon-container absolute md:top-0 left-0 w-full h-full flex items-center justify-center -z-10">
                 <GatsbyImage
                   className="w-full h-full"
@@ -78,7 +78,7 @@ export default function Home({ data }) {
             </div>
 
             <GatsbyImage
-              className="flex-1 rounded-lg mx-5"
+              className="about-image flex-1 max-w-lg mx-auto rounded-lg"
               image={image}
               alt={frontmatter.title}
             />

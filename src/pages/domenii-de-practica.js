@@ -15,7 +15,7 @@ export default function Services({ data }) {
         </h1>
       </div>
 
-      <div className="services-container mb-32 flex flex-col gap-20 text-secondary">
+      <div className="services-container mb-32 px-5 flex flex-col gap-20 text-secondary">
         {services.map((service, i) => {
           const id = service.id;
           const image = getImage(service.frontmatter.image);
@@ -25,20 +25,20 @@ export default function Services({ data }) {
 
           return (
             <section
-              id={title}
-              key={id}
               className={`service-card flex flex-col md:flex-row gap-10 md:gap-20 pt-20 ${
                 i % 2 === 0 ? "md:flex-row-reverse" : ""
               }
-              `}
+            `}
+              id={title}
+              key={id}
             >
               <GatsbyImage
-                className="flex-1 rounded-lg mx-5"
+                className="flex-1 rounded-lg max-w-lg mx-auto"
                 image={getImage(image)}
                 alt={title}
               />
 
-              <div className="content-container relative mx-5 flex-1 flex flex-col justify-center">
+              <div className="content-container relative max-w-lg mx-auto flex-1 flex flex-col justify-center">
                 <div className="icon-container absolute top-0 left-0 w-full h-full flex items-center justify-center -z-10">
                   <GatsbyImage
                     image={getImage(icon)}
