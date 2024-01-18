@@ -51,6 +51,7 @@ const config = {
     description: "Cabinet de Avocatură Simona Oros din Satu Mare",
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
     siteUrl: "https://avocatsimonaoros.ro",
+    image: "/images/logo_500x500.png",
     contact: {
       phone: "0740.886.617",
       email: "avocat.simonaoros@gmail.com",

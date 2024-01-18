@@ -1,6 +1,6 @@
 // Create a custom 404 page for a lawyer firm's landing website
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 const NotFoundPage = () => (
   <Layout>

@@ -1,8 +1,9 @@
 import * as React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
 import { ElfsightWidget } from "react-elfsight-widget";
+import { Seo } from "../components/seo";
 
 export default function Home({ data }) {
   const services = data.services.nodes;
@@ -59,7 +60,7 @@ export default function Home({ data }) {
                 />
               </div>
 
-              <h1 className="about_subtitle text-2xl md:text-3xl text-center md:text-start font-serif mb-10">
+              <h1 className="about_subtitle font-semibold text-xl md:text-3xl text-center md:text-start font-serif mb-10">
                 DESPRE NOI
               </h1>
 
@@ -85,11 +86,11 @@ export default function Home({ data }) {
         </section>
 
         <section className="services_section text-secondary flex flex-col">
-          <h1 className="services_title mx-auto text-center text-2xl md:text-3xl font-serif">
+          <h1 className="services_title mx-auto mb-20 text-center font-semibold text-xl md:text-3xl font-serif">
             DOMENII DE PRACTICĂ
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 px-10 py-20 sm:px-32 md:px-20 lg:px-32 lg:py-32 gap-20 lg:gap-32">
+          <div className="mb-32 grid grid-cols-1 md:grid-cols-2 px-10 sm:px-32 md:px-20 lg:px-32 gap-20 lg:gap-32">
             {services.map((service) => {
               const image = getImage(service.frontmatter.image);
               const title = service.frontmatter.title;
@@ -97,7 +98,7 @@ export default function Home({ data }) {
 
               return (
                 <Link
-                  className="service_preview_card"
+                  className="service_preview_card flex flex-col hover:transform hover:scale-105 transition-all duration-300 ease-in-out"
                   to={`/domenii-de-practica#${title}`}
                   key={service.id}
                 >
@@ -121,7 +122,7 @@ export default function Home({ data }) {
                     </div>
                   </div>
 
-                  <h3 className="service-title mt-5 text-center text-2xl">
+                  <h3 className="service-title mx-auto mt-5 text-center text-2xl border-b-2 pb-2 border-accent">
                     {title}
                   </h3>
                 </Link>
@@ -130,15 +131,16 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className="reviews_section w-full px-5 h-96 mt-10 mb-20">
-          <h1 className="google-reviews_title text-2xl md:text-3xl font-serif text-center mb-20">
+        <section className="reviews_section w-full px-5 h-96 mt-10 mb-32">
+          <h1 className="google-reviews_title font-semibold text-xl md:text-3xl font-serif text-center mb-20">
             PĂREREA CLIENȚILOR
           </h1>
 
-          <div className="google-reviews_container mx-auto w-full">
+          <div className="google-reviews_container w-full overflow-hidden">
             <ElfsightWidget
               widgetId="667eb523-5899-497e-8bec-f4292d104cdc"
               className="elfsight-reviews"
+              modern={true}
             />
           </div>
         </section>
@@ -198,3 +200,5 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = () => <Seo />;
