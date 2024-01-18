@@ -57,7 +57,7 @@ export default function Services({ data }) {
                 />
 
                 <Link
-                  className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
+                  className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark whitespace-nowrap"
                   to="/contact"
                   id="contact-button"
                 >

@@ -70,7 +70,7 @@ export default function Home({ data }) {
               />
 
               <Link
-                className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
+                className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark whitespace-nowrap"
                 to="/despre"
               >
                 AFLĂ MAI MULTE
