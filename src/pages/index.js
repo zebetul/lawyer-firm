@@ -2,10 +2,15 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 export default function Home({ data }) {
   const services = data.services.nodes;
   const siteMetadata = data.site.siteMetadata;
+  const about = data.about;
+  const { frontmatter, html } = about;
+  const image = getImage(frontmatter.image);
+  const icon = getImage(frontmatter.icon);
 
   return (
     <>
@@ -42,8 +47,45 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        <section className="services_section text-secondary">
-          <h1 className="services_title text-center text-xl md:text-2xl font-serif">
+        <section className="about_section w-full">
+          <div className="about-container mb-32 flex flex-col-reverse md:flex-row gap-20 text-secondary">
+            <div className="content-container relative mx-5 py-20 flex-1 flex flex-col justify-center">
+              <div className="icon-container absolute md:top-0 left-0 w-full h-full flex items-center justify-center -z-10">
+                <GatsbyImage
+                  className="w-full h-full"
+                  image={icon}
+                  alt={frontmatter.title}
+                  style={{ filter: "brightness(95%)" }}
+                />
+              </div>
+
+              <h1 className="about_subtitle text-2xl md:text-3xl text-center md:text-start font-serif mb-10">
+                DESPRE NOI
+              </h1>
+
+              <div
+                className="mb-10"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+
+              <Link
+                className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
+                to="/despre"
+              >
+                AFLĂ MAI MULTE
+              </Link>
+            </div>
+
+            <GatsbyImage
+              className="flex-1 rounded-lg mx-5"
+              image={image}
+              alt={frontmatter.title}
+            />
+          </div>
+        </section>
+
+        <section className="services_section text-secondary flex flex-col">
+          <h1 className="services_title mx-auto text-center text-2xl md:text-3xl font-serif">
             DOMENII DE PRACTICĂ
           </h1>
 
@@ -87,6 +129,19 @@ export default function Home({ data }) {
             })}
           </div>
         </section>
+
+        <section className="reviews_section w-full px-5 h-96 mt-10 mb-20">
+          <h1 className="google-reviews_title text-2xl md:text-3xl font-serif text-center mb-20">
+            PĂREREA CLIENȚILOR
+          </h1>
+
+          <div className="google-reviews_container mx-auto w-full">
+            <ElfsightWidget
+              widgetId="667eb523-5899-497e-8bec-f4292d104cdc"
+              className="elfsight-reviews"
+            />
+          </div>
+        </section>
       </Layout>
     </>
   );
@@ -95,7 +150,7 @@ export default function Home({ data }) {
 export const query = graphql`
   query HomePageQuery {
     services: allMarkdownRemark(
-      filter: { frontmatter: { title: { ne: "Despre" } } }
+      filter: { frontmatter: { title: { nin: ["Despre", "About"] } } }
       sort: { frontmatter: { title: ASC } }
     ) {
       nodes {
@@ -115,6 +170,24 @@ export const query = graphql`
         }
       }
     }
+
+    about: markdownRemark(frontmatter: { title: { eq: "About" } }) {
+      frontmatter {
+        title
+        icon {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      html
+    }
+
     site {
       siteMetadata {
         title

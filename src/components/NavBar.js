@@ -104,6 +104,10 @@ const NavBar = () => {
               />
 
               <ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 py-10 ps-5 font-bold font-serif text-sm">
+                <Link to="/">
+                  <li>ACASĂ</li>
+                </Link>
+
                 <Link to="/despre">
                   <li>DESPRE</li>
                 </Link>
@@ -126,6 +130,10 @@ const NavBar = () => {
           )}
 
           <ul className="nav_links hidden md:flex justify-end gap-10 font-serif font-bold text-sm">
+            <Link className="hover:text-accentDark" to="/">
+              <li>ACASĂ</li>
+            </Link>
+
             <Link className="hover:text-accentDark" to="/despre">
               <li>DESPRE</li>
             </Link>

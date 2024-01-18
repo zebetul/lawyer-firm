@@ -75,7 +75,7 @@ export default function Services({ data }) {
 export const query = graphql`
   query ServicesPageQuery {
     services: allMarkdownRemark(
-      filter: { frontmatter: { title: { ne: "Despre" } } }
+      filter: { frontmatter: { title: { nin: ["Despre", "About"] } } }
       sort: { frontmatter: { title: ASC } }
     ) {
       nodes {

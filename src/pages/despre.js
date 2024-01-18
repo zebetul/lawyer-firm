@@ -50,22 +50,21 @@ export default function About({ data }) {
 
 export const query = graphql`
   query {
-    markdownRemark(fileAbsolutePath: { regex: "/despre.md/" }) {
-      html
+    markdownRemark(frontmatter: { title: { eq: "Despre" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-
         icon {
           childImageSharp {
             gatsbyImageData
           }
         }
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
+      html
     }
   }
 `;
