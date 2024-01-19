@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "lawyer-firm-landing-website",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "description": "A landing website for Avocat Simona Oros lawyer firm",
+  "version": "1.0.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -27,10 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/zebetul/lawyer-firm"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
