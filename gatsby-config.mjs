@@ -38,8 +38,8 @@ const config = {
     subtitle: "Sunt aici pentru a găsi cea mai bună soluție legală.",
     description: "Cabinet de Avocatură Simona Oros din Satu Mare",
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
-    // siteUrl: "https://avocat-simona-oros.netlify.app",
-    siteUrl: "http://localhost:8000",
+    siteUrl: "https://avocat-simona-oros.netlify.app",
+    // siteUrl: "http://localhost:8000",
     image: "/images/logo_500x500.png",
     icon: "/favicon.ico",
     keywords: [
