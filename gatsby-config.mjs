@@ -35,7 +35,7 @@ const config = {
 
   siteMetadata: {
     title: "Avocat Simona Oros",
-    subtitle: "Sunt aici pentru a găsi cea mai bună soluție legală.",
+    subtitles: ["CONSILIERE JURIDICĂ", "REPREZENTARE ÎN INSTANȚĂ"],
     description: "Cabinet de Avocatură Simona Oros din Satu Mare",
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
     siteUrl: "https://avocat-simona-oros.netlify.app",
@@ -44,11 +44,13 @@ const config = {
     icon: "/favicon.ico",
     keywords: [
       "avocat",
+      "caut avocat",
       "avocat satu mare",
       "simona oros",
       "cabinet de avocatura",
       "consultanta juridica",
       "reprezentare in instanta",
+      "servicii juridice",
     ],
     contact: {
       phone: "0740.886.617",

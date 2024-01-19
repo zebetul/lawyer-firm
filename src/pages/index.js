@@ -13,6 +13,45 @@ export default function Home({ data }) {
   const image = getImage(frontmatter.image);
   const icon = getImage(frontmatter.icon);
 
+  // SUBTITLE ANIMATION
+  // Define the array of subtitles
+  const subtitles = React.useMemo(
+    () => [...siteMetadata.subtitles],
+    [siteMetadata.subtitles]
+  );
+
+  // Initialize state variables
+  const [currentSubtitleIndex, setCurrentSubtitleIndex] = React.useState(0);
+  const [subtitle, setSubtitle] = React.useState(subtitles[1]);
+
+  // Function to render the subtitle gradually
+  const renderSubtitle = (subtitle) => {
+    setSubtitle("");
+    const subtitleArray = subtitle.split("");
+    const subtitleLength = subtitleArray.length;
+
+    for (let i = 0; i < subtitleLength; i++) {
+      setTimeout(() => {
+        setSubtitle((subtitle) => subtitle + subtitleArray[i]);
+      }, 50 * i);
+    }
+  };
+
+  // Set up an effect to update the subtitle periodically
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      renderSubtitle(subtitles[currentSubtitleIndex]);
+
+      // Toggle between the two subtitles
+      setCurrentSubtitleIndex((currentSubtitleIndex) =>
+        currentSubtitleIndex ? 0 : 1
+      );
+    }, 3000);
+
+    // Clean up the interval when the component unmounts or the dependencies change
+    return () => clearInterval(interval);
+  }, [currentSubtitleIndex, subtitles]);
+
   return (
     <>
       <div className="hero_image_container absolute top-0 left-0 h-screen w-full overflow-hidden">
@@ -29,18 +68,18 @@ export default function Home({ data }) {
       <Layout>
         <section className="hero_section h-screen w-full">
           <div className="hero_title-container relative w-full h-full md:h-3/4 pl-5 2xl:pl-28 flex flex-col justify-center text-3xl text-white">
-            <h2 className="hero_subtitle mb-5 text-sm">
-              {siteMetadata.subtitle}
+            <h2 className="hero_subtitle h-5 mb-5 text-base font-serif">
+              <span className="text-accentDark">SERVICII DE</span> {subtitle}
             </h2>
 
-            <h1 className="hero_title mb-5 font-serif text-6xl">
+            <h1 className="hero_title mb-5 font-serif text-6xl opacity-0 animate-fade-in">
               {siteMetadata.title}
             </h1>
 
-            <p className="hero_subtitle mb-10 text-2xl">{siteMetadata.motto}</p>
+            <p className="hero_text mb-10 text-2xl">{siteMetadata.motto}</p>
 
             <Link
-              className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark"
+              className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark opacity-0 animate-fade-in"
               to="/contact"
             >
               CONTACT
@@ -195,7 +234,7 @@ export const query = graphql`
         title
         description
         motto
-        subtitle
+        subtitles
       }
     }
   }
