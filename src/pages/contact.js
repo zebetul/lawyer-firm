@@ -24,6 +24,7 @@ export default function Contact({ data }) {
               target="_blank"
               rel="noopener noreferrer"
               href={`tel:${phone}`}
+              aria-label="Phone"
             >
               <PiPhoneFill className="text-accent" size={50} />
             </a>
@@ -37,10 +38,11 @@ export default function Contact({ data }) {
 
           <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col lg:flex-row items-center lg:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
+              className="contact_email"
               target="_blank"
               rel="noopener noreferrer"
               href={`mailto:${email}`}
-              className="contact_email"
+              aria-label="Email"
             >
               <MdEmail className="text-accent" size={50} />
             </a>
@@ -54,10 +56,11 @@ export default function Contact({ data }) {
 
           <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col lg:flex-row items-center lg:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
+              className="contact_address"
               target="_blank"
               rel="noopener noreferrer"
               href={googleMapsUrl}
-              className="contact_address"
+              aria-label="Address"
             >
               <MdLocationOn className="text-accent" size={50} />
             </a>
