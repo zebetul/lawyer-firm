@@ -104,21 +104,21 @@ const NavBar = () => {
               />
 
               <ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 py-10 ps-5 font-bold font-serif text-sm">
-                <Link to="/">
-                  <li>ACASĂ</li>
-                </Link>
+                <li>
+                  <Link to="/">ACASĂ</Link>
+                </li>
 
-                <Link to="/despre">
-                  <li>DESPRE</li>
-                </Link>
+                <li>
+                  <Link to="/despre">DESPRE</Link>
+                </li>
 
-                <Link to="/domenii-de-practica">
-                  <li>DOMENII DE PRACTICA</li>
-                </Link>
+                <li>
+                  <Link to="/domenii-de-practica">DOMENII DE PRACTICA</Link>
+                </li>
 
-                <Link to="/contact">
-                  <li>CONTACT</li>
-                </Link>
+                <li>
+                  <Link to="/contact">CONTACT</Link>
+                </li>
               </ul>
             </>
           ) : (
@@ -130,21 +130,29 @@ const NavBar = () => {
           )}
 
           <ul className="nav_links hidden md:flex justify-end gap-10 font-serif font-bold text-sm">
-            <Link className="hover:text-accentDark" to="/">
-              <li>ACASĂ</li>
-            </Link>
+            <li>
+              <Link className="hover:text-accentDark" to="/">
+                ACASĂ
+              </Link>
+            </li>
 
-            <Link className="hover:text-accentDark" to="/despre">
-              <li>DESPRE</li>
-            </Link>
+            <li>
+              <Link className="hover:text-accentDark" to="/despre">
+                DESPRE
+              </Link>
+            </li>
 
-            <Link className="hover:text-accentDark" to="/domenii-de-practica">
-              <li>DOMENII DE PRACTICA</li>
-            </Link>
+            <li>
+              <Link className="hover:text-accentDark" to="/domenii-de-practica">
+                DOMENII DE PRACTICA
+              </Link>
+            </li>
 
-            <Link className="hover:text-accentDark" to="/contact">
-              <li>CONTACT</li>
-            </Link>
+            <li>
+              <Link className="hover:text-accentDark" to="/contact">
+                CONTACT
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

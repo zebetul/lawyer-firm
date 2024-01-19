@@ -107,7 +107,7 @@ export default function Home({ data }) {
                       className="service_image w-full rounded-lg"
                       image={image}
                       style={{ filter: "brightness(40%)" }}
-                      alt={title}
+                      alt={`Imagine reprezentând domeniul ${title}`}
                       placeholder="blurred"
                     />
 
@@ -115,16 +115,16 @@ export default function Home({ data }) {
                       <GatsbyImage
                         className="service_icon w-32"
                         image={icon}
-                        alt={title}
+                        alt={`Icoană reprezentând domeniul ${title}`}
                         placeholder="blurred"
                         style={{ filter: "brightness(90%)" }}
                       />
                     </div>
                   </div>
 
-                  <h3 className="service-title mx-auto mt-5 text-center text-2xl border-b-2 pb-2 border-accent">
+                  <h2 className="service-title mx-auto mt-5 text-center text-2xl border-b-2 pb-2 border-accent">
                     {title}
-                  </h3>
+                  </h2>
                 </Link>
               );
             })}

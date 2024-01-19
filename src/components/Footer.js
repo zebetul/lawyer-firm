@@ -53,9 +53,9 @@ const Footer = () => {
 
       <div className="footer_links max-w-3xl mx-auto mb-20 flex gap-10 flex-col md:flex-row items-center md:justify-around">
         <div className="column_services w-80 flex flex-col gap-3">
-          <h4 className="font-bold text-accentDark font-serif">
+          <h1 className="font-bold text-accentDark font-serif">
             DOMENII DE PRACTICA
-          </h4>
+          </h1>
 
           <ul className="services_list flex flex-col gap-3">
             {services.map((service) => (
@@ -69,9 +69,9 @@ const Footer = () => {
         </div>
 
         <div className="column_contact w-80 flex flex-col gap-3">
-          <h4 className="text-l font-bold text-accentDark font-serif">
+          <h1 className="text-l font-bold text-accentDark font-serif">
             CONTACT
-          </h4>
+          </h1>
 
           <ul className="contact_list flex flex-col gap-3">
             <li>
