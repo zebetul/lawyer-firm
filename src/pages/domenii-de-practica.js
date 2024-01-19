@@ -3,6 +3,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Seo } from "../components/seo";
 
 export default function Services({ data }) {
   const services = data.services.nodes;
@@ -98,3 +99,11 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <Seo
+    title="Domenii de practică"
+    description="Domeniile de practică în care cabinetul de avocatură Simona Oros din Satu Mare oferă servicii de consultanță juridică și reprezentare în instanță."
+    pathname="/domenii-de-practica"
+  />
+);

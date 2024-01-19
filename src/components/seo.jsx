@@ -7,6 +7,7 @@ export const Seo = ({ title, description, pathname, children }) => {
     description: defaultDescription,
     image,
     siteUrl,
+    icon,
   } = useSiteMetadata();
 
   const seo = {
@@ -23,7 +24,9 @@ export const Seo = ({ title, description, pathname, children }) => {
       <meta name="image" content={seo.image} />
       <link
         rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
+        type="image/png"
+        sizes="32x32"
+        href={`${siteUrl}${icon}`}
       />
       {children}
     </>
