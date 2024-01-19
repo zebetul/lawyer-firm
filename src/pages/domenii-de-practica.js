@@ -105,5 +105,13 @@ export const Head = () => (
     title="Domenii de practică"
     description="Domeniile de practică în care cabinetul de avocatură Simona Oros din Satu Mare oferă servicii de consultanță juridică și reprezentare în instanță."
     pathname="/domenii-de-practica"
+    keywords={[
+      "practica juridica",
+      "practica legala",
+      "drept civil",
+      "drept comercial",
+      "drept penal",
+      "dreptul familiei",
+    ]}
   />
 );

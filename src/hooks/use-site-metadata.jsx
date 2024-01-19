@@ -10,6 +10,7 @@ export const useSiteMetadata = () => {
           image
           siteUrl
           icon
+          keywords
         }
       }
     }

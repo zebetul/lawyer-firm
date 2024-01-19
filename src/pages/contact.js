@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { PiPhoneFill } from "react-icons/pi";
 import { MdEmail, MdLocationOn } from "react-icons/md";
+import { Seo } from "../components/seo";
 
 export default function Contact({ data }) {
   const { phone, address, email, googleMapsUrl, googleMapsEmbedUrl } =
@@ -16,8 +17,8 @@ export default function Contact({ data }) {
           CONTACT
         </h1>
 
-        <div className="contacts-container mb-20 flex flex-col md:flex-row gap-10 text-secondary">
-          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
+        <div className="contacts-container mb-20 flex flex-col lg:flex-row gap-10 text-secondary">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col lg:flex-row items-center lg:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               className="contact_phone"
               target="_blank"
@@ -27,14 +28,14 @@ export default function Contact({ data }) {
               <PiPhoneFill className="text-accent" size={50} />
             </a>
 
-            <div className="contact-form text-center md:text-start">
-              <h2 className="mb-1 font-serif md:text-xl font-bold">TELEFON</h2>
+            <div className="contact-form text-center lg:text-start">
+              <h2 className="mb-1 font-serif lg:text-xl font-bold">TELEFON</h2>
 
               <p className="mb-1">{phone}</p>
             </div>
           </div>
 
-          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col lg:flex-row items-center lg:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -44,14 +45,14 @@ export default function Contact({ data }) {
               <MdEmail className="text-accent" size={50} />
             </a>
 
-            <div className="contact-form text-center md:text-start">
-              <h2 className="mb-1 font-serif md:text-xl font-bold">EMAIL</h2>
+            <div className="contact-form text-center lg:text-start">
+              <h2 className="mb-1 font-serif lg:text-xl font-bold">EMAIL</h2>
 
               <p className="mb-1">{email}</p>
             </div>
           </div>
 
-          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col md:flex-row items-center md:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
+          <div className="contact-form-container mx-auto flex-1 w-80 flex flex-col lg:flex-row items-center lg:items-start gap-3 py-7 px-5 bg-gray-100 rounded-lg">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +62,7 @@ export default function Contact({ data }) {
               <MdLocationOn className="text-accent" size={50} />
             </a>
 
-            <div className="contact-form text-center md:text-start">
+            <div className="contact-form text-center lg:text-start">
               <h2 className="mb-1 font-serif md:text-xl font-bold">ADRESĂ</h2>
 
               <p className="mb-1">{address}</p>
@@ -100,3 +101,11 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = () => (
+  <Seo
+    title="Contact"
+    pathname={"/contact"}
+    description="Detalii de contact Cabinet de Avocatură Simona Oros din Satu Mare"
+  />
+);

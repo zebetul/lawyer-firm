@@ -3,6 +3,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Seo } from "../components/seo";
 
 export default function About({ data }) {
   const { frontmatter, html } = data.markdownRemark;
@@ -68,3 +69,5 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = () => <Seo title="Despre" pathname={"/despre"} />;
