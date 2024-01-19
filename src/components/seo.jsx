@@ -11,8 +11,6 @@ export const Seo = ({ title, description, pathname, keywords, children }) => {
     keywords: defaultKeywords,
   } = useSiteMetadata();
 
-  console.log(defaultKeywords);
-
   const seo = {
     title: title ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
@@ -25,7 +23,7 @@ export const Seo = ({ title, description, pathname, keywords, children }) => {
   return (
     <>
       <title>{seo.title}</title>
-      <meta lang="ro" />
+      <html lang="ro" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <link rel="icon" type="image/png" sizes="32x32" href={seo.icon} />
