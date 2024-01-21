@@ -68,8 +68,10 @@ export default function Home({ data }) {
       <Layout>
         <section className="hero_section h-screen w-full">
           <div className="hero_title-container relative w-full h-full md:h-3/4 pl-5 2xl:pl-28 flex flex-col justify-center text-3xl text-white">
-            <h2 className="hero_subtitle h-5 mb-5 text-base font-serif">
-              <span className="text-accentDark">SERVICII DE</span> {subtitle}
+            <h2 className="hero_subtitle mb-5 h-10 md:h-2 flex flex-col md:flex-row text-base font-serif">
+              <span className="text-accentDark mr-2">SERVICII DE</span>
+
+              <span>{subtitle}</span>
             </h2>
 
             <h1 className="hero_title mb-5 font-serif text-6xl opacity-0 animate-fade-in">
