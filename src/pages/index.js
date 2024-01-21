@@ -172,7 +172,7 @@ export default function Home({ data }) {
           </div>
         </section>
 
-        {/* <section className="reviews_section w-full px-5 h-96 mt-10 mb-32">
+        <section className="reviews_section w-full px-5 h-96 mt-10 mb-32">
           <h1 className="google-reviews_title font-semibold text-xl md:text-3xl font-serif text-center mb-20">
             PĂREREA CLIENȚILOR
           </h1>
@@ -184,7 +184,7 @@ export default function Home({ data }) {
               modern={true}
             />
           </div>
-        </section> */}
+        </section>
       </Layout>
     </>
   );
