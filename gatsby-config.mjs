@@ -40,7 +40,7 @@ const config = {
     motto: "SERIOZITATE, PROFESIONALISM, EXPERIENȚĂ",
     siteUrl: "https://avocat-simona-oros.netlify.app",
     // siteUrl: "http://localhost:8000",
-    image: "/images/image.png",
+    image: "/image.png",
     icon: "/favicon.ico",
     keywords: [
       "avocat",
