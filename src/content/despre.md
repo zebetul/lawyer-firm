@@ -1,6 +1,6 @@
 ---
 title: Despre
-image: ../images/despre.jpg
+image: ../images/despre.jpeg
 icon: ../images/icons/despre.png
 ---
 

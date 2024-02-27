@@ -1,6 +1,6 @@
 ---
 title: About
-image: ../images/avocat.jpg
+image: ../images/avocat.jpeg
 icon: ../images/icons/avocat.png
 ---
 
