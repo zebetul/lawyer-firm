@@ -87,7 +87,7 @@ export const query = graphql`
 					title
 					icon {
 						childImageSharp {
-							gatsbyImageData
+							gatsbyImageData(placeholder: NONE)
 						}
 					}
 					image {

@@ -58,8 +58,8 @@ export default function Home({ data }) {
 				<StaticImage
 					className="hero_image h-full w-full object-cover"
 					src="../images/hero/Hero-bg-img.png"
-					alt=""
-					placeholder="blurred"
+					alt="Imagine reprezentând Justiția"
+					placeholder="none"
 					style={{ filter: "brightness(70%)" }}
 					loading="eager"
 				/>
@@ -183,7 +183,7 @@ export default function Home({ data }) {
 							modern={true}
 						/>
 
-						<div className="cover absolute bottom-0 left-0 w-full h-12 bg-white z-10"></div>
+						<div className="elfsightWidget_cover absolute bottom-0 left-0 w-full h-12 bg-white z-10"></div>
 					</div>
 				</section>
 			</Layout>
@@ -212,7 +212,7 @@ export const query = graphql`
 					}
 					icon {
 						childImageSharp {
-							gatsbyImageData
+							gatsbyImageData(placeholder: NONE)
 						}
 					}
 				}
@@ -224,7 +224,7 @@ export const query = graphql`
 				title
 				icon {
 					childImageSharp {
-						gatsbyImageData
+						gatsbyImageData(placeholder: NONE)
 					}
 				}
 				image {

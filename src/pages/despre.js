@@ -26,6 +26,7 @@ export default function About({ data }) {
 								image={icon}
 								alt={frontmatter.title}
 								style={{ filter: "brightness(95%)" }}
+								placeholder="none"
 							/>
 						</div>
 
@@ -63,7 +64,7 @@ export const query = graphql`
 				title
 				icon {
 					childImageSharp {
-						gatsbyImageData
+						gatsbyImageData(placeholder: NONE)
 					}
 				}
 				image {
