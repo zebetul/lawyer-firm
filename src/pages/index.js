@@ -176,12 +176,14 @@ export default function Home({ data }) {
 						PĂREREA CLIENȚILOR
 					</h1>
 
-					<div className="google-reviews_container w-full overflow-hidden">
+					<div className="relative google-reviews_container w-full overflow-hidden">
 						<ElfsightWidget
 							widgetId="667eb523-5899-497e-8bec-f4292d104cdc"
 							className="elfsight-reviews"
 							modern={true}
 						/>
+
+						<div className="cover absolute bottom-0 left-0 w-full h-12 bg-white z-10"></div>
 					</div>
 				</section>
 			</Layout>
@@ -192,7 +194,11 @@ export default function Home({ data }) {
 export const query = graphql`
 	query HomePageQuery {
 		services: allMarkdownRemark(
-			filter: { frontmatter: { title: { nin: ["Despre", "About"] } } }
+			filter: {
+				frontmatter: {
+					title: { nin: ["Succesul tău, misiunea mea!", "About"] }
+				}
+			}
 			sort: { frontmatter: { title: ASC } }
 		) {
 			nodes {
