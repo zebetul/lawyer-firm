@@ -24,7 +24,6 @@ const NavBar = () => {
 			}
 		}
 	`);
-
 	const siteMetadata = data.site.siteMetadata;
 
 	const toggleMenu = () => {
