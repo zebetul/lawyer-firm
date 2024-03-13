@@ -224,7 +224,7 @@ export const query = graphql`
 				title
 				icon {
 					childImageSharp {
-						gatsbyImageData(placeholder: NONE)
+						gatsbyImageData(placeholder: BLURRED)
 					}
 				}
 				image {
