@@ -64,7 +64,7 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto flex justify-between px-5">
         <Link className="nav_logo" to="/">
           <StaticImage
-            src="../images/logos/logo_500x182.png"
+            src="../images/logos/logo.png"
             className="w-40 md:w-52"
             alt="logo"
           />
