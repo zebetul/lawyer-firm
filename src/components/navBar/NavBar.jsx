@@ -46,6 +46,7 @@ const NavBar = () => {
 						src="../../images/logos/logo.png"
 						className="w-40 md:w-52"
 						alt="logo"
+						placeholder="none"
 					/>
 				</Link>
 
