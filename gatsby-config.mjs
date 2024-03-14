@@ -39,7 +39,7 @@ const config = {
 		description: "Cabinet de Avocatură Simona Oros din Satu Mare",
 		motto:
 			"Oferim consultanță juridică inclusiv în limbile franceză și italiană, adaptată nevoilor tale. Suntem aici să analizăm detaliat cazul tău și să găsim soluții potrivite.",
-		siteUrl: "https://avocat-simona-oros.netlify.app",
+		siteUrl: "https://avocatsatumare.ro",
 		image: "/image.png",
 		icon: "/favicon.ico",
 		keywords: [
