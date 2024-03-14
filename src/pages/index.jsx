@@ -1,56 +1,24 @@
-import * as React from "react";
-import Layout from "../components/Layout";
+import React from "react";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
 import { ElfsightWidget } from "react-elfsight-widget";
+
+import Layout from "../components/Layout";
+import ServiceCard from "../components/index/ServiceCard";
+import useToggleSubtitles from "../components/index/useToggleSubtitles";
 import { Seo } from "../components/seo";
 
 export default function Home({ data }) {
-	const services = data.services.nodes;
-	const siteMetadata = data.site.siteMetadata;
 	const about = data.about;
 	const { frontmatter, html } = about;
 	const image = getImage(frontmatter.image);
 	const icon = getImage(frontmatter.icon);
 
-	// SUBTITLE ANIMATION
-	// Define the array of subtitles
-	const subtitles = React.useMemo(
-		() => [...siteMetadata.subtitles],
-		[siteMetadata.subtitles]
-	);
+	const siteMetadata = data.site.siteMetadata;
+	const subtitles = siteMetadata.subtitles;
+	const { subtitle } = useToggleSubtitles(subtitles);
 
-	// Initialize state variables
-	const [currentSubtitleIndex, setCurrentSubtitleIndex] = React.useState(0);
-	const [subtitle, setSubtitle] = React.useState(subtitles[1]);
-
-	// Function to render the subtitle gradually
-	const renderSubtitle = (subtitle) => {
-		setSubtitle("");
-		const subtitleArray = subtitle.split("");
-		const subtitleLength = subtitleArray.length;
-
-		for (let i = 0; i < subtitleLength; i++) {
-			setTimeout(() => {
-				setSubtitle((subtitle) => subtitle + subtitleArray[i]);
-			}, 50 * i);
-		}
-	};
-
-	// Set up an effect to update the subtitle periodically
-	React.useEffect(() => {
-		const interval = setInterval(() => {
-			renderSubtitle(subtitles[currentSubtitleIndex]);
-
-			// Toggle between the two subtitles
-			setCurrentSubtitleIndex((currentSubtitleIndex) =>
-				currentSubtitleIndex ? 0 : 1
-			);
-		}, 3000);
-
-		// Clean up the interval when the component unmounts or the dependencies change
-		return () => clearInterval(interval);
-	}, [currentSubtitleIndex, subtitles]);
+	const services = data.services.nodes;
 
 	return (
 		<>
@@ -84,7 +52,8 @@ export default function Home({ data }) {
 
 						<Link
 							className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark opacity-0 animate-fade-in"
-							to="/contact">
+							to="/contact"
+						>
 							CONTACT
 						</Link>
 					</div>
@@ -113,7 +82,8 @@ export default function Home({ data }) {
 
 							<Link
 								className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark whitespace-nowrap"
-								to="/despre">
+								to="/despre"
+							>
 								AFLĂ MAI MULTE
 							</Link>
 						</div>
@@ -132,42 +102,9 @@ export default function Home({ data }) {
 					</h1>
 
 					<div className="mb-32 grid grid-cols-1 md:grid-cols-2 px-10 sm:px-32 md:px-20 lg:px-32 gap-20 lg:gap-32">
-						{services.map((service) => {
-							const image = getImage(service.frontmatter.image);
-							const title = service.frontmatter.title;
-							const icon = getImage(service.frontmatter.icon);
-
-							return (
-								<Link
-									className="service_preview_card flex flex-col hover:transform hover:scale-105 transition-all duration-300 ease-in-out"
-									to={`/domenii-de-practica#${title}`}
-									key={service.id}>
-									<div className="image_container relative w-full">
-										<GatsbyImage
-											className="service_image w-full rounded-lg"
-											image={image}
-											style={{ filter: "brightness(40%)" }}
-											alt={`Imagine reprezentând domeniul ${title}`}
-											placeholder="blurred"
-										/>
-
-										<div className="service-icon-container absolute top-0 left-0 w-full h-full p-2 flex items-center justify-center">
-											<GatsbyImage
-												className="service_icon w-32"
-												image={icon}
-												alt={`Icoană reprezentând domeniul ${title}`}
-												placeholder="blurred"
-												style={{ filter: "brightness(90%)" }}
-											/>
-										</div>
-									</div>
-
-									<h2 className="service-title mx-auto mt-5 text-center text-2xl border-b-2 pb-2 border-accent">
-										{title}
-									</h2>
-								</Link>
-							);
-						})}
+						{services.map((service) => (
+							<ServiceCard service={service} />
+						))}
 					</div>
 				</section>
 

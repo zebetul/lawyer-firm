@@ -28,10 +28,10 @@ export default function Services({ data }) {
 						<section
 							className={`service-card flex flex-col md:flex-row gap-10 md:gap-20 pt-20 ${
 								i % 2 === 0 ? "md:flex-row-reverse" : ""
-							}
-            `}
+							}`}
 							id={title}
-							key={id}>
+							key={id}
+						>
 							<GatsbyImage
 								className="flex-1 rounded-lg max-w-lg mx-auto"
 								image={getImage(image)}
@@ -59,7 +59,8 @@ export default function Services({ data }) {
 								<Link
 									className="hero_button px-10 py-3 mr-auto rounded-md bg-accent text-secondary text-lg hover:bg-accentDark whitespace-nowrap"
 									to="/contact"
-									id={`contact-button-${title}`}>
+									id={`contact-button-${title}`}
+								>
 									CONTACTEAZĂ-NE
 								</Link>
 							</div>

@@ -6,6 +6,7 @@ import { MdEmail, MdOutlineClose, MdOutlineMenu } from "react-icons/md";
 import { PiPhoneFill } from "react-icons/pi";
 
 import useNavBackground from "./useNavBackground";
+import NavLinks from "./NavLinks";
 
 const NavBar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,13 +35,15 @@ const NavBar = () => {
 		<nav
 			className={`nav_background sticky top-0 z-10 py-2 text-primary transition-all duration-300 ${
 				isNavBackground || isMenuOpen ? "bg-secondary" : ""
-			}`}>
+			}`}
+		>
 			<div className="max-w-7xl mx-auto flex justify-between px-5">
 				<Link
 					className="nav_logo"
-					to="/">
+					to="/"
+				>
 					<StaticImage
-						src="../images/logos/logo.png"
+						src="../../images/logos/logo.png"
 						className="w-40 md:w-52"
 						alt="logo"
 					/>
@@ -51,7 +54,8 @@ const NavBar = () => {
 						<li>
 							<a
 								href={`tel:${siteMetadata.contact.phone}`}
-								className="nav_phone flex gap-2">
+								className="nav_phone flex gap-2"
+							>
 								<PiPhoneFill
 									className="text-accentDark"
 									size={20}
@@ -64,7 +68,8 @@ const NavBar = () => {
 						<li>
 							<a
 								href={`mailto:${siteMetadata.contact.email}`}
-								className="nav_email flex gap-2">
+								className="nav_email flex gap-2"
+							>
 								<MdEmail
 									className="text-accentDark"
 									size={20}
@@ -84,21 +89,7 @@ const NavBar = () => {
 							/>
 
 							<ul className="nav_links absolute left-0 top-20 w-full md:hidden flex flex-col justify-start bg-secondary gap-10 py-10 ps-5 font-bold font-serif text-sm">
-								<li>
-									<Link to="/">ACASĂ</Link>
-								</li>
-
-								<li>
-									<Link to="/despre">DESPRE</Link>
-								</li>
-
-								<li>
-									<Link to="/domenii-de-practica">DOMENII DE PRACTICA</Link>
-								</li>
-
-								<li>
-									<Link to="/contact">CONTACT</Link>
-								</li>
+								<NavLinks />
 							</ul>
 						</>
 					) : (
@@ -110,37 +101,7 @@ const NavBar = () => {
 					)}
 
 					<ul className="nav_links hidden md:flex justify-end gap-10 font-serif font-bold text-sm">
-						<li>
-							<Link
-								className="hover:text-accentDark"
-								to="/">
-								ACASĂ
-							</Link>
-						</li>
-
-						<li>
-							<Link
-								className="hover:text-accentDark"
-								to="/despre">
-								DESPRE
-							</Link>
-						</li>
-
-						<li>
-							<Link
-								className="hover:text-accentDark"
-								to="/domenii-de-practica">
-								DOMENII DE PRACTICA
-							</Link>
-						</li>
-
-						<li>
-							<Link
-								className="hover:text-accentDark"
-								to="/contact">
-								CONTACT
-							</Link>
-						</li>
+						<NavLinks />
 					</ul>
 				</div>
 			</div>

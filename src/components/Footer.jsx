@@ -22,7 +22,11 @@ const Footer = () => {
 			}
 
 			footerServices: allMarkdownRemark(
-				filter: { frontmatter: { title: { nin: ["Despre", "About"] } } }
+				filter: {
+					frontmatter: {
+						title: { nin: ["Succesul tău, misiunea mea!", "About"] }
+					}
+				}
 				sort: { frontmatter: { title: ASC } }
 			) {
 				nodes {
@@ -79,7 +83,8 @@ const Footer = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 								href={`tel:${phone}`}
-								className="contact_phone flex items-center gap-2">
+								className="contact_phone flex items-center gap-2"
+							>
 								<PiPhoneFill
 									className="text-accentDark"
 									size={20}
@@ -94,7 +99,8 @@ const Footer = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 								href={`mailto:${email}`}
-								className="contact_email flex items-center gap-2">
+								className="contact_email flex items-center gap-2"
+							>
 								<MdEmail
 									className="text-accentDark"
 									size={20}
@@ -109,7 +115,8 @@ const Footer = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 								href={linkedin}
-								className="contact_linkedin flex items-center gap-2">
+								className="contact_linkedin flex items-center gap-2"
+							>
 								<FaLinkedin
 									className="text-accentDark"
 									size={20}
@@ -123,7 +130,8 @@ const Footer = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 								href={googleMapsUrl}
-								className="contact_linkedin flex items-center gap-2">
+								className="contact_maps flex items-center gap-2"
+							>
 								<MdLocationOn
 									className="text-accentDark"
 									size={20}
