@@ -33,7 +33,7 @@ const NavBar = () => {
 
 	return (
 		<nav
-			className={`nav_background sticky top-0 z-10 py-2 text-primary transition-all duration-300 ${
+			className={`nav_background sticky top-0 z-50 py-2 text-primary transition-all duration-300 ${
 				isNavBackground || isMenuOpen ? "bg-secondary" : ""
 			}`}
 		>

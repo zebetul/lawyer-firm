@@ -103,7 +103,10 @@ export default function Home({ data }) {
 
 					<div className="mb-32 grid grid-cols-1 md:grid-cols-2 px-10 sm:px-32 md:px-20 lg:px-32 gap-20 lg:gap-32">
 						{services.map((service) => (
-							<ServiceCard service={service} />
+							<ServiceCard
+								key={service.frontmatter.title}
+								service={service}
+							/>
 						))}
 					</div>
 				</section>
