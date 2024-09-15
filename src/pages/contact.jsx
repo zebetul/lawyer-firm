@@ -23,8 +23,7 @@ export default function Contact({ data }) {
 						target="_blank"
 						rel="noopener noreferrer"
 						href={`tel:${phone}`}
-						aria-label="Phone"
-					>
+						aria-label="Phone">
 						<PiPhoneFill
 							className="text-accent"
 							size={50}
@@ -44,8 +43,7 @@ export default function Contact({ data }) {
 						target="_blank"
 						rel="noopener noreferrer"
 						href={`mailto:${email}`}
-						aria-label="Email"
-					>
+						aria-label="Email">
 						<MdEmail
 							className="text-accent"
 							size={50}
@@ -65,8 +63,7 @@ export default function Contact({ data }) {
 						target="_blank"
 						rel="noopener noreferrer"
 						href={googleMapsUrl}
-						aria-label="Address"
-					>
+						aria-label="Address">
 						<MdLocationOn
 							className="text-accent"
 							size={50}
@@ -89,8 +86,7 @@ export default function Contact({ data }) {
 					height="500"
 					allowFullScreen=""
 					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
-				></iframe>
+					referrerPolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</Layout>
 	);
@@ -117,5 +113,13 @@ export const Head = () => (
 		title="Contact"
 		pathname={"/contact"}
 		description="Detalii de contact Cabinet de Avocatură Simona Oros din Satu Mare"
+		keywords={[
+			"contact avocat",
+			"adresa cabinet avocatura",
+			"telefon avocat",
+			"email avocat",
+			"avocat maps",
+			"avocat harta",
+		]}
 	/>
 );
